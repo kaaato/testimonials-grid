@@ -1,0 +1,251 @@
+:root {
+  --page-color: hsl(210, 46%, 95%);
+  --card-color-daniel: hsl(263, 55%, 52%);
+  --card-color-jonathan: hsl(217, 19%, 35%);
+  --card-color-jeanette: hsl(0, 0%, 100%);
+  --card-color-patrick: hsl(219, 29%, 14%);
+  --card-color-kira: hsl(0, 0%, 100%);
+  --ink-light-color: hsl(0, 0%, 100%);
+  --ink-dark-color: hsl(219, 29%, 14%);
+  --border-color: currentColor;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+}
+
+img, picture, svg {
+  block-size: auto;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+ul, ol { 
+  list-style: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+.visually-hidden:not(:focus):not(:active) { 
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+h2 {
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+body {
+  font-family: "Barlow Semi Condensed" ;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background-color: var(--page-color);
+  padding: 4.375rem 1.5rem;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 2em 2em 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-radius: 10px;
+}
+
+.card header {
+  display: flex;
+  gap: 1rem;
+}
+
+.card header img {
+  border: 2px solid;
+  border-radius: 50%;
+}
+
+.card header p {
+  font-size: 0.6875rem;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.card > p {
+  font-size: 1.3125rem;
+  line-height: 1.1;
+}
+
+.card blockquote {
+  opacity: 0.7;
+}
+
+.daniel {
+  background-color: var(--card-color-daniel);
+  color: var(--ink-light-color);
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 15%;
+}
+
+.daniel header img {
+  --border-color: #A775F1;
+  border-color: var(--border-color);
+}
+
+.jonathan {
+  background-color: var(--card-color-jonathan);
+  color: var(--ink-light-color);
+}
+
+.jonathan header img {
+  --border-color: hsl(217, 19%, 35%);
+  border-color: var(--border-color);
+}
+
+:is(.jeanette, .kira) {
+  background-color: var(--card-color-jeanette);
+  color: var(--ink-dark-color);
+}
+
+:is(.jeanette, .kira) header img {
+  --border-color: hsl(0, 0%, 100%);
+  border-color: var(--border-color);
+}
+
+.patrick {
+  background-color: var(--card-color-patrick);
+  color: var(--ink-light-color);
+}
+
+.patrick header img {
+  --border-color: hsl(263, 55%, 52%);
+  border-color: var(--border-color);
+}
+
+.attribution { 
+  font-size: 11px; text-align: center; 
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width: 37.5em) {
+  body {
+    padding: clamp(6rem, 1.102rem + 10.612vw, 22rem);
+  }
+
+  .box {
+    grid-template-columns: repeat(2, 1fr) ;
+    grid-template-rows: repeat(4, min-content);
+  }
+
+  .daniel {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+
+  .jonathan {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .jeanette {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .patrick {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+  }
+
+  .kira {
+    grid-column: 1 / span 2;
+    grid-row: 4;
+  }
+}
+
+@media (min-width: 50em) {
+  .box {
+    grid-template-columns: minmax(12rem, 1fr) 1fr minmax(12rem, 1fr);
+    grid-template-rows: repeat(3, min-content);
+  }
+
+  .jonathan {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .jeanette {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .patrick {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+  }
+
+  .kira {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+  }
+}
+
+@media (min-width: 75em) {
+  .box {
+    grid-template-columns: repeat(2, minmax(12rem, 1fr) 1fr);
+    grid-template-rows: repeat(2, min-content);
+    gap: 1.5rem 1.875rem;
+  }
+
+  .kira {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+}
