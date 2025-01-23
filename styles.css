@@ -98,17 +98,17 @@ body {
   border-radius: 10px;
 }
 
-.card header {
+.card .figure {
   display: flex;
   gap: 1rem;
 }
 
-.card header img {
+.card .figure img {
   border: 2px solid;
   border-radius: 50%;
 }
 
-.card header p {
+.card .figure p {
   font-size: 0.6875rem;
   line-height: 1;
   opacity: 0.5;
@@ -131,7 +131,7 @@ body {
   background-position: top right 15%;
 }
 
-.daniel header img {
+.daniel .figure img {
   --border-color: #A775F1;
   border-color: var(--border-color);
 }
@@ -141,7 +141,7 @@ body {
   color: var(--ink-light-color);
 }
 
-.jonathan header img {
+.jonathan .figure img {
   --border-color: hsl(217, 19%, 35%);
   border-color: var(--border-color);
 }
@@ -151,7 +151,7 @@ body {
   color: var(--ink-dark-color);
 }
 
-:is(.jeanette, .kira) header img {
+:is(.jeanette, .kira) .figure img {
   --border-color: hsl(0, 0%, 100%);
   border-color: var(--border-color);
 }
@@ -161,7 +161,7 @@ body {
   color: var(--ink-light-color);
 }
 
-.patrick header img {
+.patrick .figure img {
   --border-color: hsl(263, 55%, 52%);
   border-color: var(--border-color);
 }
